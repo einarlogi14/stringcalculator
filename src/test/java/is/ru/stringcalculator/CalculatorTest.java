@@ -38,4 +38,8 @@ public class CalculatorTest {
 	public void testDelim(){
 	assertEquals(3, Calculator.add("//;\n1;2"));
 	}
+	@Test
+	public void testDelimAddBiggerNumbers(){
+	assertEquals(20, Calculator.add("//;\n10;10"));
+	}
 }
