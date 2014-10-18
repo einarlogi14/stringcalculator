@@ -8,11 +8,11 @@ public class Calculator {
 		}
 
 		else if (delim(text)){
-		String delim = text.substring(text.indexOf("//") + 2, text.indexOf("//") + 3);
+		/*String delim = text.substring(text.indexOf("//") + 2, text.indexOf("//") + 3);
 		String cutDown = text.replace(delim, ",");
 		String replaceNewLine = cutDown.replace("\n", ",");
 		String finalString = replaceNewLine.substring(replaceNewLine.indexOf("//")+4, replaceNewLine.length());
-		return sum(splitNumbers(finalString));
+		*/return cutDown(text);
 		}
 		else if(text.contains(",") || text.contains( "\\n")){
 			return sum(splitNumbers(text));
@@ -21,6 +21,15 @@ public class Calculator {
 		else
 			return 1;
 	}
+
+
+	private static int cutDown(String text){
+		 String delim = text.substring(text.indexOf("//") + 2, text.indexOf("//") + 3);
+		String cutDown = text.replace(delim, ",");
+		String replaceNewLine = cutDown.replace("\n", ",");
+		 String finalString = replaceNewLine.substring(replaceNewLine.indexOf("//")+4, replaceNewLine.length());
+		 return sum(splitNumbers(finalString));
+	}	
 
 	private static Boolean delim(String number){
 		if(number.startsWith("//")){
