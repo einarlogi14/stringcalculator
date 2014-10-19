@@ -42,4 +42,20 @@ public class CalculatorTest {
 	public void testDelimAddBiggerNumbers(){
 	assertEquals(20, Calculator.add("//;\n10;10"));
 	}
+
+/*	@Test
+	public void throwNegativeException(){
+	assertEquals("Negatives not allowed: -1", Calculator.add("-1,2"));
+	}*/
+
+	@Test
+	public void oneThousandOner(){
+	assertEquals(2, Calculator.add("1001,2"));
+	}
+	
+	@Test
+	public void anyLengthDelim(){
+	assertEquals(6, Calculator.add("//[***]\n1***2***3"));
+	}
+
 }
