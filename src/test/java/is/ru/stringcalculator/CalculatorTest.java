@@ -43,10 +43,10 @@ public class CalculatorTest {
 	assertEquals(20, Calculator.add("//;\n10;10"));
 	}
 
-/*	@Test
-	public void throwNegativeException(){
-	assertEquals("Negatives not allowed: -1", Calculator.add("-1,2"));
-	}*/
+	@Test(expected = IllegalArgumentException.class)
+        public void testInsertNegativeNumbers(){
+        Calculator.add("1, -3");
+        }
 
 	@Test
 	public void oneThousandOner(){
