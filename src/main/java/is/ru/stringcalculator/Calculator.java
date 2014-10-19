@@ -40,8 +40,11 @@ public class Calculator {
 	}
 
 	private static String anyDelim(String text){
-		String delim = text.substring(text.indexOf("[") + 1, text.indexOf("[")+2);
-		String numbers = text.substring(text.indexOf("\n") + 1, text.length());
+		
+		int symbolIndex = text.indexOf("[");
+		int newLineIndex = text.indexOf("\n");
+		String delim = text.substring(symbolIndex + 1, symbolIndex + 2);
+		String numbers = text.substring(newLineIndex + 1, text.length());
 		String turnToComma = numbers.replace(delim,",");
 		String removeCommas = turnToComma.replaceAll(",+", ",");
 
