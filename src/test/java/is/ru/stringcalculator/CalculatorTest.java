@@ -62,4 +62,9 @@ public class CalculatorTest {
 	public void anyLengthDelimPlusSign(){
 	assertEquals(60, Calculator.add("//[++++]\n30++++20++++10"));
 	}
+	/*
+	@Test
+	public void multipleDelimeters(){
+	assertEquals(6, Calculator.add("//[*][%]\n1*2%3"));
+	}*/
 }

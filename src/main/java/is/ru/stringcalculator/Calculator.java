@@ -53,13 +53,14 @@ public class Calculator {
 		} 
 
 	private static String cutDown(String text){
-		 String delim = text.substring(text.indexOf("//") + 2, text.indexOf("//") + 3);
+		int backSlashIndex = text.indexOf("//");
+		 String delim = text.substring(backSlashIndex + 2, backSlashIndex + 3);
 		if(delim.equals("[")){
 		return anyDelim(text);
 		}
 		String cutDown = text.replace(delim, ",");
 		String replaceNewLine = cutDown.replace("\n", ",");
-		 String finalString = replaceNewLine.substring(replaceNewLine.indexOf("//")+4, replaceNewLine.length());
+		 String finalString = replaceNewLine.substring(backSlashIndex + 4, replaceNewLine.length());
 		 return finalString;
 	}	
 
