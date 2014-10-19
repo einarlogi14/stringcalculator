@@ -31,9 +31,17 @@ public class Calculator {
 
 	private static String negativeNumbers(String[] numbers){
 	String errMessage = "Numbers not allowed: ";
-	
+		
+	int arrSize = numbers.length;	
 		for(String i: numbers){
-		if(toInt(i) < 0) errMessage += i + ",";
+		
+		if(toInt(i) < 0){
+
+			if(arrSize <= 1) errMessage += i;
+			else
+			errMessage += i + ", ";
+		
+			}
 		}	
 		
 		return errMessage;

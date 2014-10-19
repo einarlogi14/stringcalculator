@@ -38,6 +38,7 @@ public class CalculatorTest {
 	public void testDelim(){
 	assertEquals(3, Calculator.add("//;\n1;2"));
 	}
+
 	@Test
 	public void testDelimAddBiggerNumbers(){
 	assertEquals(20, Calculator.add("//;\n10;10"));
@@ -47,6 +48,15 @@ public class CalculatorTest {
         public void testInsertNegativeNumbers(){
         Calculator.add("1, -3");
         }
+
+	@Test
+	public void ThrowAndShowExceptionMessage(){
+	try{
+	Calculator.add("-2,2");
+	}catch(IllegalArgumentException ex){
+		assertEquals("Numbers not allowed: -2, ",ex.getMessage());
+	}
+	}
 
 	@Test
 	public void oneThousandOner(){
